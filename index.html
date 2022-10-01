@@ -40,7 +40,8 @@ def bi_convert(in_str):
             line[9]=line[1][line[1].find('_')+1:]
             line[1]=line[1][0:line[1].find('_')]
         #кодирование услуг
-        line[2]=line[2].decode('utf-8')
+        text2=line[2].find('Вирт')
+        console.log(f'text #22: {text2}')
         if line[2].find('Виртуальная память. VMware')>0:
             line[2]='1'
         elif line[2].find('Виртуальный процессор не ниже 3,0 ГГц')>0 or line[2].find('Виртуальный процессор 3.0 ГГц.')>0 :
@@ -61,7 +62,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #21: {text}')
+    #console.log(f'text #22: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

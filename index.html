@@ -9,9 +9,9 @@
 
 <body>
   <div>Type an sample input here</div>
-  <input type="text" id="test-input"/>
+  <textarea id="test-input" cols="80" rows="10"></textarea>
   <button id="submit-button" type="submit" pys-onClick="my_function">OK</button>
-  <div id="test-output"></div>
+  <textarea readonly id="test-output" cols="80" rows="10"></textarea>
 
 <py-script>
 from js import console
@@ -24,10 +24,10 @@ def my_function(*args, **kwargs):
     console.log(f'args: {args}')
     console.log(f'kwargs: {kwargs}')
     
-    text = Element('test-input').element.value
+    text = Element('test-input').element.innerText
 
     #print('text:', text)
-    console.log(f'text: {text}')
+    #console.log(f'text: {text}')
 
     Element('test-output').element.innerText = text
 </py-script>

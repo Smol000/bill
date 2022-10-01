@@ -21,6 +21,8 @@ def bi_convert(in_str):
     lines=in_str.split('\n')
     for u in lines:
         line = u.replace('"','').replace(',','.').split(';')
+        line[0]=line[0].upper
+        line[1]=line[1].upper
         #получить VDC из тенанта
         if line[1]=='' and line[0].find('_VDC')>0:
             line[1]=line[0][line[0].find('_VDC')+1:]
@@ -92,10 +94,11 @@ def bi_convert(in_str):
             line[2]='18'
         elif line[2].find('Предоставление безлимитного доступа в Интернет на гарантированной скорости 1000 Мбит/с')>=0:
             line[2]='29'
-          #
-          #
-          #
-          #
+        elif line[2].find('Выделенный сервер Compute.Custom (40 Core. 768GB RAM)')>=0:
+            line[2]='25'
+        elif line[2].find('Выделенный сервер Compute.Custom (88 Core. 2048GB RAM)')>=0:
+            line[2]='24'
+  
           #
           #
           #
@@ -118,7 +121,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #25: {text}')
+    console.log(f'text #26: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

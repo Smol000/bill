@@ -26,7 +26,7 @@ def bi_convert(in_str):
             line[1]=line[0][line[0].find('_VDC')+1:]
         #очистить тенант от "."
         if line[0].find('.')>0:
-            line[0]=line[0][0:line[0].find('.')-1]
+            line[0]=line[0][0:line[0].find('.')]
         #очистить vdc от тенанта
         if line[1].find('_VDC')>0:
             line[1]=line[1][line[1].find('_VDC')+1:]
@@ -74,7 +74,34 @@ def bi_convert(in_str):
             line[2]='15'
         elif line[2].find('Менеджмент ноды для Kubernetes')>=0:
             line[2]='16'
+        elif line[2].find('Объектное хранилище S3. Исходящий трафик')>=0:
+            line[2]='12'
+        elif line[2].find('Объектное хранилище S3. Объем')>=0:
+            line[2]='11'
+        elif line[2].find('Предоставление доступа к Windows Server для виртуальной машины >4 vCPU (за 1 vCPU)')>=0:
+            line[2]='20'
+        elif line[2].find('Резервное копирование (на базе Veeam). Vmware')>=0:
+            line[2]='8'
+        elif line[2].find('Резервное копирование Vmware на базе Veeam. Дисковое пространство для хранения бэкапов')>=0:
+            line[2]='9'
+        elif line[2].find('Предоставление безлимитного доступа в Интернет на гарантированной скорости 5000 Мбит/с')>=0:
+            line[2]='23'
+        elif line[2].find('Выделенное Блочное устройство хранения 36x7.6TB SSD')>=0:
+            line[2]='19'
+        elif line[2].find('Выделенный Вычислительный сервер 48 ядер. 3.0 ГГц. 1536ГБ RAM')>=0:
+            line[2]='18'
+        elif line[2].find('Предоставление безлимитного доступа в Интернет на гарантированной скорости 1000 Мбит/с')>=0:
+            line[2]='29'
           #
+          #
+          #
+          #
+          #
+          #
+          #
+          #
+          #
+          
         #склейка параметров назад в строку
         n_line=''
         for y in line:
@@ -91,7 +118,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #24: {text}')
+    console.log(f'text #25: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

@@ -24,10 +24,10 @@ def my_function(*args, **kwargs):
     console.log(f'args: {args}')
     console.log(f'kwargs: {kwargs}')
     
-    text = Element('test-input').element.innerText
+    text = Element('test-input').element.innerHTML
 
     #print('text:', text)
-    console.log(f'text: {text}')
+    console.log(f'text2: {text}')
 
     #Element('test-output').element.innerText = text
     Element('test-output').element.innerHTML = text

@@ -27,9 +27,10 @@ def my_function(*args, **kwargs):
     text = Element('test-input').element.innerText
 
     #print('text:', text)
-    #console.log(f'text: {text}')
+    console.log(f'text: {text}')
 
-    Element('test-output').element.innerText = text
+    #Element('test-output').element.innerText = text
+    Element('test-output').element.innerHTML = text
 </py-script>
 
   </body>

@@ -44,7 +44,7 @@ def bi_convert(in_str):
         #console.log(f'text #22: {text2}')
         if line[2].find('Виртуальная память. VMware')>=0:
             line[2]='1'
-        elif line[2].find('Виртуальный процессор не ниже 3,0 ГГц')>=0 or line[2].find('Виртуальный процессор 3.0 ГГц.')>=0 :
+        elif line[2].find('Виртуальный процессор не ниже 3.0 ГГц')>=0 or line[2].find('Виртуальный процессор 3.0 ГГц.')>=0 :
             line[2]='2'
         elif line[2].find('Виртуальный жесткий диск SATA')>=0:
             line[2]='3'
@@ -58,7 +58,23 @@ def bi_convert(in_str):
             line[2]='7'
         elif line[2].find('Резервное копирование (на базе Veeam), VM')>=0:
             line[2]='8'
-
+        elif line[2].find('Виртуальный шлюз NSX T (X-Large)')>=0:
+            line[2]='22'
+        elif line[2].find('Предоставление доступа к Windows Server для виртуальной машины <= 4')>=0:
+            line[2]='10'
+        elif line[2].find('Блочное устройство хранения SSD')>=0:
+            line[2]='27'
+        elif line[2].find('Compute.Large')>=0:
+            line[2]='28'
+        elif line[2].find('Виртуальная память для Kubernetes')>=0:
+            line[2]='14'
+        elif line[2].find('Виртуальный процессор для Kubernetes')>=0:
+            line[2]='13'
+        elif line[2].find('Виртуальный жесткий диск для Kubernetes')>=0:
+            line[2]='15'
+        elif line[2].find('Менеджмент ноды для Kubernetes')>=0:
+            line[2]='16'
+          #
         #склейка параметров назад в строку
         n_line=''
         for y in line:
@@ -75,7 +91,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #23: {text}')
+    console.log(f'text #24: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

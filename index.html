@@ -27,6 +27,9 @@ def bi_convert(in_str):
         #очистить тенант от "."
         if line[0].find('.')>0:
             line[0]=line[0][0:line[0].find('.')-1]
+        #очистить vdc от тенанта
+        if line[1].find('_VDC')>0:
+            line[1]=line[1][line[1].find('_VDC')+1:]
         #преобразовать даты
         if line[3].find('.')>0:
             line[3]=line[3][6:]+'-'+line[3][3:5]+'-'+line[3][0:2]
@@ -48,7 +51,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #15: {text}')
+    console.log(f'text #16: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

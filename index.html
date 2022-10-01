@@ -20,7 +20,7 @@ def bi_convert(in_str):
     out_str=''
     lines=in_str.split('\n')
     for u in lines:
-        line = u.replace('"','').split(';')
+        line = u.replace('"','').replace(',','.').split(';')
         n_line=''
         for y in line:
             n_line = n_line + y +','
@@ -36,7 +36,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #10: {text}')
+    console.log(f'text #11: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

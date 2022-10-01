@@ -29,9 +29,9 @@ def bi_convert(in_str):
             line[0]=line[0][0:line[0].find('.')-1]
         #преобразовать даты
         if line[3].find('.')>0:
-            line[3]=line[3][6:]+'-'+line[3][3:4]+'-'+line[3][0:1]
+            line[3]=line[3][6:]+'-'+line[3][3:5]+'-'+line[3][0:2]
         if line[4].find('.')>0:
-            line[4]=line[4][6:]+'-'+line[4][3:4]+'-'+line[4][0:1]
+            line[4]=line[4][6:]+'-'+line[4][3:5]+'-'+line[4][0:2]
         #склейка параметров назад в строку
         n_line=''
         for y in line:
@@ -48,7 +48,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #14: {text}')
+    console.log(f'text #15: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

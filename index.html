@@ -42,7 +42,7 @@ def bi_convert(in_str):
         #кодирование услуг
         if line[2].find('Виртуальная память. VMware')>0:
             line[2]='1'
-        elif line[2].find('Виртуальный процессор не ниже 3,0 ГГц')>0:
+        elif line[2].find('Виртуальный процессор не ниже 3,0 ГГц')>0 or line[2].find('Виртуальный процессор 3.0 ГГц.')>0 :
             line[2]='2'
         #склейка параметров назад в строку
         n_line=''
@@ -60,7 +60,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #19: {text}')
+    console.log(f'text #20: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

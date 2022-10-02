@@ -26,6 +26,8 @@ def bi_convert(in_str):
         #получить VDC из тенанта
         if line[1]=='' and line[0].find('_VDC')>0:
             line[1]=line[0][line[0].find('_VDC')+1:]
+        elif line[1]=='' and line[0].find('.VDC')>0:
+            line[1]=line[0][line[0].find('.VDC')+1:]
         #очистить тенант от "."
         if line[0].find('.')>0:
             line[0]=line[0][0:line[0].find('.')]
@@ -127,7 +129,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #30: {text}')
+    console.log(f'text #31: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

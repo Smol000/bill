@@ -50,7 +50,7 @@ def bi_convert(in_str):
             line[2]='2'
         elif line[2].find('Виртуальный жесткий диск SATA')>=0:
             line[2]='3'
-        elif line[2].find('Виртуальный жесткий диск SSD,')>=0:
+        elif line[2].find('Виртуальный жесткий диск SSD. VMware')>=0:
             line[2]='4'
         elif line[2].find('Виртуальный шлюз NSX T (Large)')>=0:
             line[2]='5'
@@ -127,7 +127,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #29: {text}')
+    console.log(f'text #30: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

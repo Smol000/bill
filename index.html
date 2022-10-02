@@ -93,15 +93,19 @@ def bi_convert(in_str):
         elif line[2].find('Выделенный Вычислительный сервер 48 ядер. 3.0 ГГц. 1536ГБ RAM')>=0:
             line[2]='18'
         elif line[2].find('Предоставление безлимитного доступа в Интернет на гарантированной скорости 1000 Мбит/с')>=0:
-            line[2]='29'
+            line[2]='17'
+        elif line[2].find('Предоставление безлимитного доступа в Интернет на гарантированной скорости 3000 Мбит/с')>=0:
+            line[2]='21'
+        elif line[2].find('Предоставление безлимитного доступа в Интернет на гарантированной скорости 2000 Мбит/с')>=0:
+            line[2]='26'
         elif line[2].find('Выделенный сервер Compute.Custom (40 Core. 768GB RAM)')>=0:
             line[2]='25'
         elif line[2].find('Выделенный сервер Compute.Custom (88 Core. 2048GB RAM)')>=0:
             line[2]='24'
-  
-          #
-          #
-          #
+        elif line[2].find('Резервное копирование (на базе Veeam). VMware. Дисковое пространство для хранения бэкапов на удаленной площадке')>=0:
+            line[2]='29'  
+        elif line[2].find('Виртуальный шлюз NSXT (Compact) для Kubernetes')>=0:
+            line[2]='30'
           #
           #
           
@@ -121,7 +125,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #27: {text}')
+    console.log(f'text #28: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

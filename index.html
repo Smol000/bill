@@ -110,7 +110,22 @@ def bi_convert(in_str):
             line[2]='29'  
         elif line[2].find('Виртуальный шлюз NSXT (Compact) для Kubernetes')>=0:
             line[2]='30'
-          #
+        elif line[2].find('Аренда USB-порта')>=0:
+            line[2]='31'          #
+        elif line[2].find('Подписка NGFW UserGate Модуль Stream Antivirus до 24 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='32'#
+        elif line[2].find('Подписка NGFW UserGate Модуль Stream Antivirus до 8 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='33'#
+        elif line[2].find('Подписка NGFW UserGate Кластер отказоустойчивости до 8 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='34'#
+        elif line[2].find('Подписка NGFW UserGate Кластер отказоустойчивости до 24 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='35'#
+        elif line[2].find('Подписка NGFW UserGate Модуль Advanced Threat Protection до 24 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='36'#
+        elif line[2].find('Подписка NGFW UserGate Модуль Advanced Threat Protection до 8 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='37'#
+        elif line[2].find('Подписка NGFW UserGate на 1 месяц до 24 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='38'#
           #
           
         #склейка параметров назад в строку
@@ -129,7 +144,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #31: {text}')
+    console.log(f'text #32: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

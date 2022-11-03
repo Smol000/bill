@@ -126,7 +126,14 @@ def bi_convert(in_str):
             line[2]='37'#
         elif line[2].find('Подписка NGFW UserGate на 1 месяц до 24 ядер с сертификатом ФСТЭК VE')>=0:
             line[2]='38'#
-          #
+        elif line[2].find('Шлюз доступа ДЗО в Банк с использованием СКЗИ ФПСУ IP. 100 Мбит/с')>=0:
+            line[2]='39'          #
+        elif line[2].find('Подписка NGFW UserGate Log Analyzer до 24 ядер кластер с сертификатом ФСТЭК VE')>=0:
+            line[2]='40'#
+        elif line[2].find('Подписка NGFW UserGate Log Analyzer до 8 ядер кластер с сертификатом ФСТЭК VE')>=0:
+            line[2]='41'#
+        elif line[2].find('Подписка NGFW UserGate на 1 месяц до 8 ядер с сертификатом ФСТЭК VE')>=0:
+            line[2]='42'#
           
         #склейка параметров назад в строку
         n_line=''
@@ -144,7 +151,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #32: {text}')
+    console.log(f'text #33: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

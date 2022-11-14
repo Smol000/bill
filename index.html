@@ -42,7 +42,7 @@ def bi_convert(in_str):
             line[4]=line[4][6:]+'-'+line[4][3:5]+'-'+line[4][0:2]
         #извлечь код компоненты из VDC
         if line[1].find('_')>0:
-            line[9]=line[1][line[1].find('_')+1:]
+            line[8]=line[1][line[1].find('_')+1:]
             line[1]=line[1][0:line[1].find('_')]
         #кодирование услуг
         #text2=line[2].find('Вирт')
@@ -152,7 +152,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #34: {text}')
+    console.log(f'text #35: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

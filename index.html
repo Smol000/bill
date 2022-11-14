@@ -17,7 +17,7 @@
 from js import console
 def bi_convert(in_str):
     #разбить строку "\n"  
-    out_str=''
+    out_str ='tenant,vdc,res,d1,d2,price,sizing,allsum,comp\n'
     lines=in_str.split('\n')
     for u in lines:
         line = u.replace('"','').replace(',','.').split(';')
@@ -136,7 +136,7 @@ def bi_convert(in_str):
             line[2]='42'#
           
         #склейка параметров назад в строку
-        out_str ='tenant,vdc,res,d1,d2,price,sizing,allsum,comp\n'
+        #
         n_line=''
         del line[7]
         for y in line:
@@ -154,7 +154,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #42: {text}')
+    console.log(f'text #43: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

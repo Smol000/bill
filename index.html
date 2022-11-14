@@ -136,10 +136,12 @@ def bi_convert(in_str):
             line[2]='42'#
           
         #склейка параметров назад в строку
+        out_str ='tenant,vdc,res,d1,d2,price,sizing,allsum,comp\n'
         n_line=''
         del line[7]
         for y in line:
             n_line = n_line + y +','
+        n_line=n_line[:-1]
         out_str = out_str + n_line + '\n'
     return out_str
   
@@ -152,7 +154,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #41: {text}')
+    console.log(f'text #42: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

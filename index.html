@@ -21,7 +21,9 @@ def bi_convert(in_str):
     lines=in_str.split('\n')
     for u in lines:
         line = u.replace('"','').replace(',','.').split(';')
+        print(line[6])
         line.pop(6)
+        print(line[6])
         line[0]=line[0].upper()
         line[1]=line[1].upper()
         #получить VDC из тенанта
@@ -152,7 +154,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #35: {text}')
+    console.log(f'text #36: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

@@ -138,7 +138,7 @@ def bi_convert(in_str):
         if line[0]=='FEFB0F71-1EF3-45DB-9D71-0FAB37C24645':
             line[0]='CL_K8S_FAAS'
             line[1]='VDC01'
-            line[0]='FAAS'
+            line[9]='FAAS'
         #склейка параметров назад в строку
         #
         n_line=''
@@ -158,7 +158,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #44: {text}')
+    console.log(f'text #45: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>

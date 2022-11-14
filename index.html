@@ -137,7 +137,7 @@ def bi_convert(in_str):
           
         #склейка параметров назад в строку
         n_line=''
-        print(line[7])
+        del line[7]
         for y in line:
             n_line = n_line + y +','
         out_str = out_str + n_line + '\n'
@@ -152,7 +152,7 @@ def my_function(*args, **kwargs):
     text = Element('test-input').value
     text = bi_convert(text)
     #print('text:', text)
-    console.log(f'text #40: {text}')
+    console.log(f'text #41: {text}')
 
     Element('test-output').element.innerHTML = text
 </py-script>
